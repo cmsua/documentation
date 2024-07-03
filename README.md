@@ -1,0 +1,45 @@
+# UA Hexaboard Testing Documentation
+
+## Hardware Introduction
+
+![Image of hexaboard connected to a hexacontroller via the trophy board](overall.jpg "General Setup")
+
+Each testing station is composed of three major componenets.
+
+The **Hexacontroller**, outlined in pink above, contains an embedded Linux system capable of outputting signals on pins, and connected to the internet via an Ethernet cable. Unlike desktops and laptops, the Hexacontroller uses a microSD card to store data. Under normal circumstances, software on the Hexacontrollers is setup by students and should not need to be modified.
+
+Connected to the Hexacontroller is the **Trophy**, outlined above in purple. Sitting above both the Hexacontroller and Hexaboard, the trophy board acts as a wire connecting the two boards together. When connecting to the Hexaboard, pressure may need to be applied. The boards will audibly snap together when connected. Together, the Hexacontroller and Trophy compose the testing instrumentation.
+
+Lastly, outlined above in cyan is the **Hexaboard**. An assembled yet unfinished PCB, this is the board that will be sent onwards to an assembly center to recieve a silicone sensor and eventually find its way to the collider at CERN. This is the only board that will be exchanged between testing cycles.
+
+### The Hexacontroller
+
+![Image of hexacontroller](hexacontroller-simple.jpg "Annotated Hexacontroller")
+
+Highlighted in purple, the hexacontroller's **ethernet port** is connected directly to our network switch located under the desk. When troubleshooting, it is important to note that only the highlighted ethernet port is functional. A cable connected to the second port will yield no output.
+
+In pink, the **power cable** is terminated with a barrel jack. Connected to mains voltage is a 9v 2.2A adapter. The entier cable is one piece. Any two-part cables or cables labelled "Dell" are likely to be a computer power cable, and thus at a different voltage. Plugging a PC power cable into a hexacontroller will likely damage the controller.
+
+In cyan, the **on-off switch** is highlighted. When connected and powered, green LED indicators will be lit on the upper-left of the hexacontroller. After powering on, the controller will take at least one minute to connect to ethernet.
+
+In purple is the **trophy port**. While the trophy can be screwed into place, on most test stations it will likely be removable. Press the trophy firmly into the hexacontroller to connect the two.
+
+### The Hexaboard
+
+![Image of hexaboard](hexaboard-simple.jpg "Annotated Hexaboard")
+
+On the left of this image, we can see an annotated hexaboard.
+
+Hilighted in purple are the **HGROC** chips. While the sensor may output approximately two hundred channels, the sensor data is read by three HGROC chips which process approximately 80 channels each.
+
+In cyan is the **LD Loopback** chip, which enables board readout. In the detector, the trophy would connect multiple boards to one FPGA, with an additional connection to indicate to a board what position in the lineup it occupies. This function is instead performed by our loopback chip. The chip should be oriented such that the hole in the chip aligns with the support pillar on the board.
+
+In pink is the **compression ports** that connect to the trophy. A fair amount of pressure will be required to connect the two boards, which will join with an audible snap.
+
+To the right of the image in black is the board's **spacer**. As the hexacontroller and trophy are elevated, the hexaboard also needs to be elevated. The spacer fills this purpose. With height adjusted by screws, this board will raise the board to the proper height. Note that this board does not have rotation synmetry. The gap in the retaining wall should be oriented to allow clearance for the trophy.
+
+### Board Orientation
+
+![Image of possible board orientations](orientation.jpg "Board Orientations")
+
+The proper orientation of the board is on the left.
