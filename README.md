@@ -40,6 +40,6 @@ To the right of the image in black is the board's **spacer**. As the hexacontrol
 
 ### Board Orientation
 
-![Image of possible board orientations](orientation.jpg "Board Orientations")
+![Image of possible board orientations](orientation.png "Board Orientations")
 
 The proper orientation of the board is on the left.
