@@ -2,7 +2,7 @@
 
 ## Hardware Introduction
 
-![Image of hexaboard connected to a hexacontroller via the trophy board](overall.jpg "General Setup")
+![Image of hexaboard connected to a hexacontroller via the trophy board](hardware/overall.jpg "General Setup")
 
 Each testing station is composed of three major componenets.
 
@@ -14,7 +14,7 @@ Lastly, outlined above in cyan is the **Hexaboard**. An assembled yet unfinished
 
 ### The Hexacontroller
 
-![Image of hexacontroller](hexacontroller-simple.jpg "Annotated Hexacontroller")
+![Image of hexacontroller](hardware/hexacontroller-simple.jpg "Annotated Hexacontroller")
 
 Highlighted in purple, the hexacontroller's **ethernet port** is connected directly to our network switch located under the desk. When troubleshooting, it is important to note that only the highlighted ethernet port is functional. A cable connected to the second port will yield no output.
 
@@ -26,7 +26,7 @@ In purple is the **trophy port**. While the trophy can be screwed into place, on
 
 ### The Hexaboard
 
-![Image of hexaboard](hexaboard-simple.jpg "Annotated Hexaboard")
+![Image of hexaboard](hardware/hexaboard-simple.jpg "Annotated Hexaboard")
 
 On the left of this image, we can see an annotated hexaboard.
 
@@ -40,6 +40,20 @@ To the right of the image in black is the board's **spacer**. As the hexacontrol
 
 ### Board Orientation
 
-![Image of possible board orientations](orientation.png "Board Orientations")
+![Image of possible board orientations](hardware/orientation.png "Board Orientations")
 
 The proper orientation of the board is on the left.
+
+## Software Introduction
+
+![Screenshot of electrical testing GUI](software/gui.png "Electrical Testing GUI")
+
+Each desktop is connected to multiple hexacontrollers. In the **Testing Data** section, the user will be expected to identify the specific hexaboard connected to each hexacontroller as well as the individual HGROC chips on each hexaboard.
+
+The Testing Data section supports USB Barcode Scanners. With your cursor in a text field, upon scanning a barcode, the cursor will automatically move to the next text box.
+
+Below the data entry columns is a "Start Test" button, which will power on and configure the hexacontroller, and then run a series of tests. When a test is in-progress, the column will self-disable.
+
+Next, the **test log view** is visible. Separated into tabs, this window will display the log of each test in real-time.
+
+Lastly, the **Controller Status** view is a live visualization of each hexacontroller, as well as the services on each. A green LED indicates a valid response, while a red LED indicates an error. A blue LED is only present when the test did not run, likely due to an error in a previous test.
