@@ -20,9 +20,11 @@ Highlighted in purple, the hexacontroller's **ethernet port** is connected direc
 
 In pink, the **power cable** is terminated with a barrel jack. Connected to mains voltage is a 9v 2.2A adapter. The entier cable is one piece. Any two-part cables or cables labelled "Dell" are likely to be a computer power cable, and thus at a different voltage. Plugging a PC power cable into a hexacontroller will likely damage the controller.
 
-In cyan, the **on-off switch** is highlighted. When connected and powered, green LED indicators will be lit on the upper-left of the hexacontroller. After powering on, the controller will take at least one minute to connect to ethernet.
+In cyan, the **on-off switch** is highlighted. When connected and powered, green **power indicator LEDs** indicators will be lit on the upper-left of the hexacontroller. After powering on, the controller will take at least one minute to connect to ethernet.
 
 In purple is the **trophy port**. While the trophy can be screwed into place, on most test stations it will likely be removable. Press the trophy firmly into the hexacontroller to connect the two.
+
+When a hexaboard is connected to the controller and power is enabled, the **central power indicator LEDS** will be blue.
 
 ### The Hexaboard
 
@@ -57,3 +59,23 @@ Below the data entry columns is a "Start Test" button, which will power on and c
 Next, the **test log view** is visible. Separated into tabs, this window will display the log of each test in real-time.
 
 Lastly, the **Controller Status** view is a live visualization of each hexacontroller, as well as the services on each. A green LED indicates a valid response, while a red LED indicates an error. A blue LED is only present when the test did not run, likely due to an error in a previous test.
+
+## Electrical Testing Prodecure
+
+1. Verify that the [hexacontroller](#the-hexacontroller) is ready to accept a hexaboard. In this state, the controller should be switched on, but not powering the trophy. The Power Indicator LEDs in the upper-left should be lit green, and the central LEDs should be unlit.
+
+2. Place the [hexaboard](#the-hexaboard) in a riser. Then, connect the trophy to the hexaboard. Ensure that proper [board orientation](#board-orientation) is maintained. Verify that the trophy has not become disconnected from the hexacontroller. When placed appropriately, the riser's retaining walls should not impede the trophy.
+
+3. Attach an L3 Loopback board to the hexaboard. When attached appropriately, the hole in the loopback board should align with a cylindical column attached to the hexacontroller. The board should not overlap with the trophy.
+
+4. Verify the Power Supply is disabled. Then, connect the appropriate power cable to the hexaboard. The label on the power cord should match the label of the hexacontroller.
+
+5. In the [Module Testing GUI](#software-introduction), select the text field for the board ID. Then, using the barcode scanner, scan the barcode on the board. The cursor should then advance to the HGROC fields, which should then be scanned accordingly.
+
+6. Verify that the hexacontroller is ready to start testing. In the GUI, the controller should indicate a green status light for "Connected" and "Zynq".
+
+7. Click "Start Test". The column will disable. During the test, the central power indicator LEDs will be lit blue. Once the test is finished, the column will re-enable.
+
+8. Verify the hexacontroller is no longer powering the hexaboard. The central power indicator LEDs should no longer be lit blue.
+
+9. Disconnect the hexaboard from the L3 Loopback and the trophy. Place the hexaboard in the completed boards area.
