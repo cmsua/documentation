@@ -6,7 +6,7 @@
 
 Each testing station is composed of three major componenets.
 
-The **Hexacontroller**, outlined in pink above, contains an embedded Linux system capable of outputting signals on pins, and connected to the internet via an Ethernet cable. Unlike desktops and laptops, the Hexacontroller uses a microSD card to store data. Under normal circumstances, software on the Hexacontrollers is setup by students and should not need to be modified.
+The **Hexacontroller**, outlined in pink above, contains an embedded Linux system capable of outputting signals on pins, and connected to the internet via an Ethernet cable. Unlike desktops and laptops, the Hexacontroller uses a microSD card to store data. Under normal circumstances, software on the Hexacontrollers is setup by graduate students and should not need to be modified.
 
 Connected to the Hexacontroller is the **Trophy**, outlined above in purple. Sitting above both the Hexacontroller and Hexaboard, the trophy board acts as a wire connecting the two boards together. When connecting to the Hexaboard, pressure may need to be applied. The boards will audibly snap together when connected. Together, the Hexacontroller and Trophy compose the testing instrumentation.
 
@@ -76,6 +76,26 @@ Lastly, the **Controller Status** view is a live visualization of each hexacontr
 
 7. Click "Start Test". The column will disable. During the test, the central power indicator LEDs will be lit blue. Once the test is finished, the column will re-enable.
 
-8. Verify the hexacontroller is no longer powering the hexaboard. The central power indicator LEDs should no longer be lit blue.
+8. Ensure the test completed successfully. In the test log view, select the testing station and read the last lines of the logs. These should indicate whether the board has passed.
 
-9. Disconnect the hexaboard from the L3 Loopback and the trophy. Place the hexaboard in the completed boards area.
+9. Verify the hexacontroller is no longer powering the hexaboard. The central power indicator LEDs should no longer be lit blue.
+
+10. Disconnect the hexaboard from the L3 Loopback and the trophy. Place the hexaboard in the proper area based on the test results.
+
+## Electrical Testing Computer Daily Setup
+
+To start the electrical testing GUI, log in as `daq` and run the following commands in Terminal:
+
+```bash
+cd ~/Desktop/electrical-testing-gui
+./venv/bin/python3 application.py
+```
+
+## Visual Inspection Computer Daily Setup
+
+To start the electrical testing GUI, log in as `daq` and run the following commands in Terminal:
+
+```bash
+cd ~/Desktop/scanning-gui
+./venv/bin/python3 application.py
+```
